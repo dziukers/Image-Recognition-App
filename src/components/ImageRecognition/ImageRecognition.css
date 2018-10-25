@@ -1,0 +1,22 @@
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+@media (max-width:1024px) {
+    .imageContainer {
+        display: block;
+        position: absolute;
+    }
+}
+.currentImage {
+    width:auto;
+    height: 500px;
+}
+
+@media (max-width: 600px) {
+    .currentImage {
+        width:90%;
+        height:auto;
+    }
+}

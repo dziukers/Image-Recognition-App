@@ -1,0 +1,39 @@
+.info {
+
+    background: rgba(255, 255, 255, 0.144);
+    height:100%;
+    transition: all 1s;
+    padding:10px;
+}
+@media (max-width:1024px) {
+.info {
+    position: absolute;
+    right:0;
+    top:0; 
+}
+}
+@media (max-width:600px) {
+    .info {
+        margin:0 auto;
+        position: static;
+        width:90%;
+        height:auto;
+    }
+}
+.info:hover {
+    background: rgba(255, 255, 255, 0.603);
+}
+.info-paragraph {
+    display: flex;
+    justify-content: space-between;
+    padding:2px;
+    margin:0;
+}
+
+.detectedName {
+    color:rgb(3, 4, 109);
+    
+}
+.detectedValue {
+    padding-left:2px;
+}

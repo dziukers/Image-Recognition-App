@@ -1,0 +1,9 @@
+.Tilt {
+    display:inline-block;
+}
+.Tilt-inner {
+    background: linear-gradient(to right, rgb(38, 44, 136),rgb(78, 78, 78));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
