@@ -8,23 +8,23 @@ self.__precacheManifest = [
     "url": "/Image-Recognition-App/static/js/runtime~main.a719bffc.js"
   },
   {
-    "revision": "7d1f718758dfe33e6b2c",
-    "url": "/Image-Recognition-App/static/js/main.7d1f7187.chunk.js"
+    "revision": "af4b8c77bc12dc1ec26a",
+    "url": "/Image-Recognition-App/static/js/main.af4b8c77.chunk.js"
   },
   {
-    "revision": "50a49811127e98bd6ea8",
-    "url": "/Image-Recognition-App/static/js/1.50a49811.chunk.js"
+    "revision": "5d4454dc641edaa81670",
+    "url": "/Image-Recognition-App/static/js/1.5d4454dc.chunk.js"
   },
   {
-    "revision": "7d1f718758dfe33e6b2c",
-    "url": "/Image-Recognition-App/static/css/main.e9f87a65.chunk.css"
+    "revision": "af4b8c77bc12dc1ec26a",
+    "url": "/Image-Recognition-App/static/css/main.8f6e1ede.chunk.css"
   },
   {
-    "revision": "50a49811127e98bd6ea8",
+    "revision": "5d4454dc641edaa81670",
     "url": "/Image-Recognition-App/static/css/1.dedb8c5b.chunk.css"
   },
   {
-    "revision": "5544170d2ef508c213d482f683c81b34",
+    "revision": "890aecea321f320553f04304daf877fc",
     "url": "/Image-Recognition-App/index.html"
   }
 ];
