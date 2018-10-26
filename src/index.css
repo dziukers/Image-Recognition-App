@@ -7,9 +7,12 @@ body {
   background: linear-gradient(to left, rgb(112, 228, 228), rgb(236, 98, 125));
 }
 
-button {
+a, a:focus, button, button:focus {
   cursor: pointer;
+  outline:none;
 }
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
