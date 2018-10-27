@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Image-Recognition-App/precache-manifest.be67d0083dd3111b0e2335f5454d07da.js"
+  "/Image-Recognition-App/precache-manifest.0285bf1acdf7c7272578ee62ae549529.js"
 );
 
 workbox.clientsClaim();

@@ -1,16 +1,16 @@
 {
-  "main.css": "/Image-Recognition-App/static/css/main.8f6e1ede.chunk.css",
-  "main.js": "/Image-Recognition-App/static/js/main.af4b8c77.chunk.js",
-  "main.js.map": "/Image-Recognition-App/static/js/main.af4b8c77.chunk.js.map",
+  "main.css": "/Image-Recognition-App/static/css/main.1233d416.chunk.css",
+  "main.js": "/Image-Recognition-App/static/js/main.05c61821.chunk.js",
+  "main.js.map": "/Image-Recognition-App/static/js/main.05c61821.chunk.js.map",
   "static/css/1.dedb8c5b.chunk.css": "/Image-Recognition-App/static/css/1.dedb8c5b.chunk.css",
   "static/js/1.5d4454dc.chunk.js": "/Image-Recognition-App/static/js/1.5d4454dc.chunk.js",
   "static/js/1.5d4454dc.chunk.js.map": "/Image-Recognition-App/static/js/1.5d4454dc.chunk.js.map",
   "runtime~main.js": "/Image-Recognition-App/static/js/runtime~main.a719bffc.js",
   "runtime~main.js.map": "/Image-Recognition-App/static/js/runtime~main.a719bffc.js.map",
-  "static/css/1.dedb8c5b.chunk.css.map": "/Image-Recognition-App/static/css/1.dedb8c5b.chunk.css.map",
+  "static/css/main.1233d416.chunk.css.map": "/Image-Recognition-App/static/css/main.1233d416.chunk.css.map",
   "static/media/brain.png": "/Image-Recognition-App/static/media/brain.d668a020.png",
-  "static/css/main.8f6e1ede.chunk.css.map": "/Image-Recognition-App/static/css/main.8f6e1ede.chunk.css.map",
+  "static/css/1.dedb8c5b.chunk.css.map": "/Image-Recognition-App/static/css/1.dedb8c5b.chunk.css.map",
   "index.html": "/Image-Recognition-App/index.html",
-  "precache-manifest.be67d0083dd3111b0e2335f5454d07da.js": "/Image-Recognition-App/precache-manifest.be67d0083dd3111b0e2335f5454d07da.js",
+  "precache-manifest.0285bf1acdf7c7272578ee62ae549529.js": "/Image-Recognition-App/precache-manifest.0285bf1acdf7c7272578ee62ae549529.js",
   "service-worker.js": "/Image-Recognition-App/service-worker.js"
 }
