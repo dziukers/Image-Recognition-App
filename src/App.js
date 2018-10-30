@@ -6,14 +6,10 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import ImageRecognition from './components/ImageRecognition/ImageRecognition';
 import Particles from 'react-particles-js';
-import Clarifai from 'clarifai';
 import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
 import defaultInfo from './components/ImageRecognition/ImageInfo/DefaultInfo';
 
-const app = new Clarifai.App({
-  apiKey: '6c4b92d1050048a59e603aaac555b344'
- });
 
 const particlesOptions = {
   particles: {
@@ -27,39 +23,78 @@ const particlesOptions = {
   }
 }
 
+const initialState = {
+  input: '',
+  imageUrl: 'https://images.unsplash.com/photo-1540206458-a985485e4a8e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e2e651dc8e83c46450aaf39a4dd59066&auto=format&fit=crop&w=2090&q=80',
+  imageInfo: defaultInfo,
+  imageLoading: false,
+  dataFetching: false,
+  route: 'signin',
+  isSignedIn: false,
+  user: {
+    id:'',
+    name:'',
+    email:'',
+    entries:0,
+    joined: ''
+  }
+};
+
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      input: '',
-      imageUrl: 'https://images.unsplash.com/photo-1540206458-a985485e4a8e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e2e651dc8e83c46450aaf39a4dd59066&auto=format&fit=crop&w=2090&q=80',
-      imageInfo: defaultInfo,
-      imageLoading: false,
-      dataFetching: false,
-      route: 'signin',
-      isSignedIn: false
+    this.state = initialState;
     }
+
+  loadUser = (data) => {
+    this.setState({
+      user: {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        entries: data.entries,
+        joined: data.joined
+      }
+    })
   }
+
   onInputChange = (e) => {
     console.log(e.target.value);
       this.setState({input:e.target.value})
   }
 
   onButtonSubmit = () => {
-
     this.setState({dataFetching: true});
     if(this.state.input.includes('http')){
     this.setState({imageUrl:this.state.input});
-    app.models.initModel({id: Clarifai.GENERAL_MODEL, version: "aa7f35c01e0642fda5cf400f543e7c40"})
-      .then(generalModel => {
-        return generalModel.predict(this.state.input);
+
+    fetch('https://fast-caverns-20871.herokuapp.com/imageurl', {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+          url: this.state.input
       })
+    })
+    .then(resp => resp.json())
       .then(response => {
         var concepts = response['outputs'][0]['data']['concepts'];
-        this.setState({imageInfo: concepts, input: '', dataFetching: false})
+        this.setState({imageInfo: concepts, input: '', dataFetching: false});
+        fetch('https://fast-caverns-20871.herokuapp.com:4000/image', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                id: this.state.user.id
+            })
+        })
+        .then(resp => resp.json())
+        .then(count => {
+          this.setState(Object.assign(this.state.user, {entries: count})
+          )
+        })
+        .catch(console.log)
       })
     } else {
-      this.setState({input:'Wprowadź poprawny adres'});
+      this.setState({input:'Wprowadź poprawny adres', dataFetching: false});
     }
   }
 
@@ -71,8 +106,8 @@ class App extends Component {
   }
 
   onRouteChange = (route) => {
-    if(route === 'signin'){
-      this.setState({isSignedIn: false})
+    if(route === 'signout'){
+      this.setState(initialState)
     }else if (route === 'home') {
       this.setState({isSignedIn: true})
     }
@@ -90,7 +125,10 @@ class App extends Component {
         { route === 'home'?
         <Fragment>
           <Logo />
-          <Rank />
+          <Rank 
+          name={this.state.user.name}
+          entries={this.state.user.entries}
+             />
           <ImageLinkForm 
           imageLoading={imageLoading}
           onInputChange={this.onInputChange}
@@ -110,9 +148,9 @@ class App extends Component {
         :
         (
           route === 'signin' ?
-          <SignIn onRouteChange={this.onRouteChange} />
+          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
           :
-          <Register onRouteChange={this.onRouteChange} />
+          <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
         )
         
         }
