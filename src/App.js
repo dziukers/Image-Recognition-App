@@ -79,7 +79,7 @@ class App extends Component {
       .then(response => {
         var concepts = response['outputs'][0]['data']['concepts'];
         this.setState({imageInfo: concepts, input: '', dataFetching: false});
-        fetch('https://fast-caverns-20871.herokuapp.com:4000/image', {
+        fetch('https://fast-caverns-20871.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
