@@ -16,12 +16,11 @@ class ImageRecognition extends Component {
   render() {
     const {imageUrl, imageInfo} = this.props;
     return (
-        <div className='flex justify-center relative'>
-            <div className='imageContainer mt2'>
+        <div className='flex justify-center'>
+            <div className='imageContainer relative'>
             <img className={this.state.loading ? "currentImage" : "currentImage visible"} onLoad={this.handleImageLoaded} src={imageUrl} alt=''/>
             {this.state.loading ? 
-            <div className="loaderBig">
-            </div> 
+            <div className="loaderBig"></div> 
             : <ImageInfo imageInfo={imageInfo} />}
             </div>
         </div>

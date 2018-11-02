@@ -16,11 +16,29 @@ const particlesOptions = {
     number : {
       value: 60,
       density: {
-        enable:true,
+        enable:false,
         value_area: 800
       }
-    }
+    },
+  size: {
+    value: 3,
+    random: true
+},
+move: {
+  enable: true,
+  speed: 5,
+  direction: "none",
+  random: false,
+  straight: false,
+  out_mode: "out",
+  bounce: false,
+  attract: {
+    enable: false,
+    rotateX: 600,
+    rotateY: 1200
   }
+}
+}
 }
 
 const initialState = {
