@@ -6,40 +6,11 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import ImageRecognition from './components/ImageRecognition/ImageRecognition';
 import Particles from 'react-particles-js';
+import ParticlesParams from './particlesjs-config.json';
 import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
 import defaultInfo from './components/ImageRecognition/ImageInfo/DefaultInfo';
 
-
-const particlesOptions = {
-  particles: {
-    number : {
-      value: 60,
-      density: {
-        enable:false,
-        value_area: 800
-      }
-    },
-  size: {
-    value: 3,
-    random: true
-},
-move: {
-  enable: true,
-  speed: 5,
-  direction: "none",
-  random: false,
-  straight: false,
-  out_mode: "out",
-  bounce: false,
-  attract: {
-    enable: false,
-    rotateX: 600,
-    rotateY: 1200
-  }
-}
-}
-}
 
 const initialState = {
   input: '',
@@ -61,9 +32,8 @@ const initialState = {
 class App extends Component {
   constructor() {
     super();
-    this.state = initialState;
+    this.state = initialState
     }
-
   loadUser = (data) => {
     this.setState({
       user: {
@@ -133,18 +103,19 @@ class App extends Component {
   }
   
   render() {
-    const {isSignedIn,imageUrl,imageInfo,imageLoading, input,route} = this.state;
+    const windowWidth = window.innerWidth;
+    const {isSignedIn,imageUrl,imageInfo,imageLoading, input,route, dataFetching} = this.state;
     return (
       <div className="App">
-      <Particles className='particles'
-              params={particlesOptions}
-            />
+        {windowWidth>800? 
+        <Particles className='particles' params={ParticlesParams}/> 
+        : null}
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         { route === 'home'?
         <Fragment>
           <Logo />
           <Rank 
-          name={this.state.user.name}
+          name={this.state.user.name || 'Anonymous'}
           entries={this.state.user.entries}
              />
           <ImageLinkForm 
@@ -154,11 +125,12 @@ class App extends Component {
           onButtonSubmit={this.onButtonSubmit} 
           value={input}
           />
-          {this.state.dataFetching?
+          {dataFetching?
             <div className="loaderBig">
             </div> 
             :
           <ImageRecognition 
+          dataFetching={dataFetching}
           imageUrl={imageUrl} 
           imageInfo={imageInfo} />
           }

@@ -10,7 +10,7 @@ class ImageLinkForm extends Component {
                 <p className='w-90 tc center '>
                 {"Input your url with image and app will recognize what is on it.\n If you don't have any image you can find some at" }                
                 <a className='link dim gold bg-animate' href='https://unsplash.com' target='_blank' rel="noopener noreferrer"> unsplash.com</a> or generate 
-                <span className='link dim gold bg-animate relative' onClick = {handleRandomLink} > random link.
+                <span className='link dim gold bg-animate relative pointer' onClick = {handleRandomLink} > random link.
                 {!imageLoading? '' :  <span className="loaderSmall"></span>}
                 </span>
                 </p>
