@@ -51,7 +51,7 @@ class App extends Component {
       this.setState({input:e.target.value})
   }
 
-  onButtonSubmit = () => {
+  onDetectSubmit = () => {
     this.setState({dataFetching: true});
     if(this.state.input.includes('http')){
     this.setState({imageUrl:this.state.input});
@@ -67,6 +67,7 @@ class App extends Component {
       .then(response => {
         var concepts = response['outputs'][0]['data']['concepts'];
         this.setState({imageInfo: concepts, input: '', dataFetching: false});
+        if(this.state.user.name) {
         fetch('https://fast-caverns-20871.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
@@ -80,9 +81,9 @@ class App extends Component {
           )
         })
         .catch(console.log)
-      })
+      }})
     } else {
-      this.setState({input:'Wprowadź poprawny adres', dataFetching: false});
+      this.setState({input:'Enter a valid address', dataFetching: false});
     }
   }
 
@@ -122,7 +123,7 @@ class App extends Component {
           imageLoading={imageLoading}
           onInputChange={this.onInputChange}
           handleRandomLink={this.handleRandomLink} 
-          onButtonSubmit={this.onButtonSubmit} 
+          onDetectSubmit={this.onDetectSubmit} 
           value={input}
           />
           {dataFetching?

@@ -43,7 +43,7 @@ class Register extends React.Component {
       }
       
       validateForm = () => {
-        this.setState({formValid: this.state.emailValid && this.state.passwordValid});
+        this.setState({formValid: this.state.emailValid && this.state.passwordValid && this.state.name});
       }
 
     onSubmitRegister = () => {

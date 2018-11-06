@@ -4,7 +4,7 @@ body {
   font-family:"Courier New", Courier, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to left, rgb(112, 228, 228), rgb(236, 98, 125));
+  background: linear-gradient(to right, rgb(115, 121, 201), rgb(219, 129, 147));
 }
 
 a, a:focus, button, button:focus {

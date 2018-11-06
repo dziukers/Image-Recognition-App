@@ -5,7 +5,7 @@ const Rank = ({name, entries}) => {
     <div>
         <div className='white f3 pb2'>
             {name==='Anonymous'?
-            `Hi, if you would like to have your place in score table, please register :)`
+            <span className='f5'>Hi, if you would like to have your place in score table, please register :)</span>
             :`${name}, your current score is:`}
         </div>
         <div className='white f1'>

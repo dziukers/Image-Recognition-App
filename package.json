@@ -8,6 +8,7 @@
     "gh-pages": "^2.0.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-modal": "^3.6.1",
     "react-particles-js": "^2.3.0",
     "react-scripts": "2.0.5",
     "react-tilt": "^0.1.4",
