@@ -34,17 +34,12 @@ class Ranking extends React.Component {
           ranking: []
         };
       }
-      componentDidMount() {
-        
-      }
       openModal = () => {
-        fetch('http://localhost:4000/ranking')
+        fetch('https://fast-caverns-20871.herokuapp.com/ranking')
         .then(resp => resp.json())
         .then(users => this.setState({
             ranking: users
         }))
-        
-      
       this.setState({modalIsOpen: true})
     }
       closeModal= () => {
@@ -71,22 +66,21 @@ class Ranking extends React.Component {
               style={customStyles}
               contentLabel="Ranking"
             >
-     
               <h2 className='ranking-header' ref={subtitle => this.subtitle = subtitle}></h2>
               <button className='absolute right-0 top-0 bn pa1 bg-washed-blue hover-light-red' onClick={this.closeModal}>close</button>
               <table>
-    <thead>
-        <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Points</th>
-            <th>Email</th>
-        </tr>
-    </thead>
-    <tbody>
-    {rankingTable}
-    </tbody>
-</table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Points</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {rankingTable}
+                </tbody>
+              </table>
             </Modal>
           </div>
         );
