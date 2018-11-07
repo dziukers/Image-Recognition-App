@@ -12,33 +12,22 @@ let rankingTable =Array.apply(null, { length: 10 }).map((user, i) => {
 </tr>)});
 Modal.setAppElement(document.getElementById('root'));
 
-const customStyles = {
-    content : {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      transform             : 'translate(-50%, -50%)',
-      margin:'0 auto',
-      padding: '10px',
-      maxHeight:'80vh'
-    }
-  };
-
 class Ranking extends React.Component {
     constructor() {
         super();
      
         this.state = {
           modalIsOpen: false,
-          ranking: []
+          ranking: [],
+          loadingRanking:true
         };
       }
       openModal = () => {
         fetch('https://fast-caverns-20871.herokuapp.com/ranking')
         .then(resp => resp.json())
         .then(users => this.setState({
-            ranking: users
+            ranking: users,
+            loadingRanking: false
         }))
       this.setState({modalIsOpen: true})
     }
@@ -47,7 +36,7 @@ class Ranking extends React.Component {
       }
      
       render() {
-          const {ranking} = this.state;
+          const {ranking, loadingRanking} = this.state;
             ranking.map((user, i) => {
            rankingTable[i] = 
            <tr key={i+1}>
@@ -60,14 +49,16 @@ class Ranking extends React.Component {
         return (
           <div>
             <p className='f4 link dim black underline pa3 pointer' onClick={this.openModal}>Ranking</p>
+
             <Modal
               isOpen={this.state.modalIsOpen}
               onRequestClose={this.closeModal}
-              style={customStyles}
+              className
               contentLabel="Ranking"
             >
               <h2 className='ranking-header' ref={subtitle => this.subtitle = subtitle}></h2>
               <button className='absolute right-0 top-0 bn pa1 bg-washed-blue hover-light-red' onClick={this.closeModal}>close</button>
+
               <table>
                 <thead>
                     <tr>
@@ -77,12 +68,17 @@ class Ranking extends React.Component {
                         <th>Email</th>
                     </tr>
                 </thead>
-                <tbody>
-                  {rankingTable}
+                {loadingRanking? 
+              <div >Loading...</div>
+              :
+                <tbody >
+                {rankingTable}
                 </tbody>
-              </table>
+                }
+                </table>    
             </Modal>
           </div>
+
         );
       }
     }
