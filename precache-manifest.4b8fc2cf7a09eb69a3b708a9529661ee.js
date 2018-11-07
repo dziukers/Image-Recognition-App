@@ -8,23 +8,23 @@ self.__precacheManifest = [
     "url": "/Image-Recognition-App/static/js/runtime~main.a719bffc.js"
   },
   {
-    "revision": "9f2773928b594dcf8f61",
-    "url": "/Image-Recognition-App/static/js/main.9f277392.chunk.js"
+    "revision": "1b2bf305d5f4a8a96d1e",
+    "url": "/Image-Recognition-App/static/js/main.1b2bf305.chunk.js"
   },
   {
     "revision": "dc088347a2d7152738c9",
     "url": "/Image-Recognition-App/static/js/1.dc088347.chunk.js"
   },
   {
-    "revision": "9f2773928b594dcf8f61",
-    "url": "/Image-Recognition-App/static/css/main.ce47560e.chunk.css"
+    "revision": "1b2bf305d5f4a8a96d1e",
+    "url": "/Image-Recognition-App/static/css/main.62cdb7e0.chunk.css"
   },
   {
     "revision": "dc088347a2d7152738c9",
     "url": "/Image-Recognition-App/static/css/1.b04ae032.chunk.css"
   },
   {
-    "revision": "dcb963a4d1286df6f0353b123a16953d",
+    "revision": "20334cea12c52abf95ae14cf11c2bd25",
     "url": "/Image-Recognition-App/index.html"
   }
 ];
