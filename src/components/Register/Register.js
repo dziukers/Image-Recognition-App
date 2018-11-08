@@ -68,10 +68,10 @@ class Register extends React.Component {
     
     render() {
     return (
-        <main className="pa4 b--black-20 br3 ba shadow-5 mw6 center w-90 w-30-l">
+        <main className="pa4 mb4 b--black-20 br3 ba shadow-5 mw6 center w-90 w-30-l">
             <div className="measure center">
                 <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                    <legend className="f2 fw6 ph0 mh0">Register</legend>
+                    <legend className="f2 fw4 ph0 mh0">Register</legend>
                     <div className="mt3 relative ">
                         <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>   
                         <input 

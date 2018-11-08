@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 .Tilt {
     display:inline-block;
 }
 .Tilt-inner {
-    background: linear-gradient(to right, rgb(38, 44, 136),rgb(78, 78, 78));
+    background-image:
+    linear-gradient(125deg, rgba(41, 181, 206, 0.3) 0%, rgba(155, 31, 80, .3) 33%, rgba(41, 137, 216, .3) 71%, rgba(31, 81, 167, 0.3) 95%),
+    linear-gradient(-88deg, rgba(206, 190, 41, .8) 0%, rgba(155, 31, 80, .3) 33%, rgba(41, 137, 216, .7) 71%, rgba(137, 180, 255, .7) 95%),
+    linear-gradient(23deg, rgb(78, 72, 12) 0%, rgba(155, 31, 80, .6) 33%, rgb(7, 21, 32) 71%, rgb(29, 46, 77) 95%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+
+
 }

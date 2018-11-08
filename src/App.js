@@ -34,6 +34,12 @@ class App extends Component {
     super();
     this.state = initialState
     }
+
+    componentDidMount() {
+      fetch('http://localhost:4000/')
+      .then(resp => resp.json())
+      .then(console.log)
+    }
   loadUser = (data) => {
     this.setState({
       user: {

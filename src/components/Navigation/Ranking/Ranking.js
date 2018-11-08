@@ -48,7 +48,7 @@ class Ranking extends React.Component {
             })
         return (
           <div>
-            <p className='f4 link dim black underline pa3 pointer' onClick={this.openModal}>Ranking</p>
+            <p className='f4 link dim dark-gray pa3 pointer' onClick={this.openModal}>Ranking</p>
 
             <Modal
               isOpen={this.state.modalIsOpen}

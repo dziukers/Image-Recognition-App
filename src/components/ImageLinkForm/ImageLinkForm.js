@@ -6,8 +6,8 @@ class ImageLinkForm extends Component {
       const {onInputChange, onDetectSubmit, handleRandomLink, value, imageLoading} = this.props;
     return (
         <div className=''>
-                <div className='center boxColor pa4 shadow-5 ba b--black-05 w-100 w-40-l '>
-                <p className='w-95 tc center '>
+                <div className='center imageForm pa4 shadow-5 ba b--black-05 lh-title '>
+                <p className='w-95 tc '>
                 {"Enter your url with the photo and let the Artificial Intelligence recognize what it is.\n If you don't have any image you can find some at" }                
                 <a className='link dim gold bg-animate' href='https://unsplash.com' target='_blank' rel="noopener noreferrer"> unsplash.com</a> or generate 
                 <span className='link dim gold bg-animate relative pointer' onClick = {handleRandomLink} > random link.

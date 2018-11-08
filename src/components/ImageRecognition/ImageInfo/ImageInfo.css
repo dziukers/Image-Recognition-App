@@ -1,41 +1,44 @@
-.info {
+ul.info {
     margin:0;
     background: rgba(255, 255, 255, 0.2);
     height:0;
     animation:height 1s forwards;
-    padding:10px;
     overflow: hidden;
+    padding:0;
 }
 @keyframes height {
     100% {height:100%}
 }
-.info:hover {
+ul.info:hover {
     background: rgba(255, 255, 255, 0.603);
 }
-.info-paragraph {
+li.detected-paragraph {
     display: flex;
     justify-content: space-between;
-    padding:2px;
+    padding:3px 10px;
     margin:0;
+    border-bottom:1px dotted rgb(25, 63, 8);
 }
-
+li.detected-paragraph:last-child {
+    border-bottom:none;
+}
 .detectedName {
     color:rgb(3, 4, 109);
-    
+    padding-right:15px;
 }
 .detectedValue {
     padding-left:2px;
 }
 
 @media (max-width:1024px) {
-    .info {
+    ul.info {
         position: absolute;
         right:0;
         top:0; 
     }
     }
     @media (max-width:600px) {
-        .info {
+        ul.info {
             margin:0;
             position:static;
             width:100%;

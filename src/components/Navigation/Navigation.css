@@ -1,0 +1,16 @@
+nav.navigation {
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+@media (max-width:500px) {
+    nav.navigation{
+
+    text-align: center;
+}
+    .navigation p {
+        padding:0 0.5em 0 1em;
+        text-align: center;
+        margin: 1em 0.5em;
+    }
+}

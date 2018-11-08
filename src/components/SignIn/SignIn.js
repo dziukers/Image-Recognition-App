@@ -36,10 +36,10 @@ class SignIn extends React.Component {
     render() {
         const { onRouteChange } = this.props;
         return (
-            <main className="pa4 b--black-20 br3 ba w-90-m shadow-5 mw6 center w-90 w-30-l">
+            <main className="pa4 mb4 b--black-20 br3 ba w-90-m shadow-5 mw6 center w-90 w-30-l">
             <div className="measure center">
                 <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                    <legend className="f2 fw6 ph0 mh0">Sign In</legend>
+                    <legend className="f2 fw4 ph0 mh0 normal">Sign In</legend>
                     <div className="mt3">
                         <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
                         <input onChange={this.onEmailChange} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address"  id="email-address" />
