@@ -36,7 +36,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-      fetch('http://localhost:4000/')
+      fetch('https://fast-caverns-20871.herokuapp.com/')
       .then(resp => resp.json())
       .then(console.log)
     }
